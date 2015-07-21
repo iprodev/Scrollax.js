@@ -1,122 +1,118 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<!--
+	Scrollax by iProDev
+	iprodev.com | @chawroka
+	Free for personal and commercial use under the MIT license (iprodev.com/license)
+-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Scrollax.js by iprodev</title>
+	<head>
+		<title>Scrollax.js by iProDev</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,500|Open+Sans:400italic,700italic,400,700|Roboto+Slab' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body id="top">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Scrollax.js</h1>
-        <p>Smart, Super smooth, cross-browser, and easy-to-use parallax scrolling effect plugin you have ever seen!</p>
+		<!-- Header -->
+			<header id="header" data-scrollax-parent="true">
+				<div class="content">
+					<div data-scrollax="properties: { 'translateY': '200%', 'opacity': 1.5 }">
+						<h1><a href="https://github.com/iprodev/Scrollax.js"><strong>Scrollax</strong>.JS</a></h1>
+						<p>smart, Super smooth, cross-browser, and Easy to use<br>
+							parallax scrolling effect plugin you have ever seen!<br>
+							<i class="icon fa-code"></i> with <i class="icon fa-heart"></i> by <a href="http://iprodev.com">iProDev</a></p>
+						<ul class="actions">
+							<li><a href="https://github.com/iprodev/Scrollax.js/archive/master.zip" class="button special icon fa-download">Download</a></li>
+							<li><a href="#one" class="button icon fa-chevron-down scrollTo">Learn More</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
 
-        <p class="view"><a href="https://github.com/iprodev/Scrollax.js">View the Project on GitHub <small>iprodev/Scrollax.js</small></a></p>
+			<section id="one" class="wrapper style2 special">
+				<header class="major">
+					<h2>Parallax has never been easier.</h2>
+				</header>
+				<p>Add some simple data attributes to your markup, run <code>$.Scrollax();</code>.<br>
+				That's all you need to get started.</p>
+			</section>
 
+			<section id="download" class="wrapper special">
+				<header class="major">
+					<h2>Get Scrollax.js</h2>
+					<p>Now get this thing on GitHub and spread the word, it's open source!<br>
+					Scrollax.js is small, only <code>3kb</code>. Tiny size ensures your page load faster.</p>
+				</header>
+				<ul class="actions">
+					<li><a href="https://github.com/iprodev/Scrollax.js/archive/master.zip" class="button special icon fa-download">Download</a></li>
+					<li><a href="https://github.com/iprodev/Scrollax.js" class="button icon fa-github">View On GitHub</a></li>
+					<li><a href="http://twitter.com/chawroka" class="button icon fa-twitter" target="_blank">Follow <span>@chawroka</span></a></li>
+				</ul>
+			</section>
 
-        <ul>
-          <li><a href="https://github.com/iprodev/Scrollax.js/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/iprodev/Scrollax.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/iprodev/Scrollax.js">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a id="scrollaxjs" class="anchor" href="#scrollaxjs" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://iprodev.github.io/Scrollax.js">Scrollax.js</a>
-</h1>
+			<section id="examples" class="wrapper style2 special">
+				<div class="inner">
+					<header class="major">
+						<h2>Examples</h2>
+					</header>
+					<ul class="actions">
+						<li><a href="horizontal.html" class="button">Horizontal</a></li>
+						<li><a href="particles.html" class="button">Particles</a></li>
+						<li><a href="backgrounds.html" class="button">Backgrounds</a></li>
+					</ul>
+					<p>All examples (except the 'Particles' one) are using a calling via jQuery proxy, because some people that are looking only at examples think that jQuery is a separate language and can't handle raw JavaScript. This'll hopefully help with lowering the "help me make it work" issue reports.</p>
+					<p>More advanced users can surely read the documentation and discover all the power &amp; cool stuff that <code class="nowrap">new Scrollax()</code> provides :)</p>
+				</div>
+			</section>
 
-<p>Smart, Super smooth, cross-browser, and easy-to-use parallax scrolling effect plugin you have ever seen!</p>
+			<section id="documentation" class="wrapper style2 special">
+				<div class="inner">
+					<header class="major">
+						<h2>Documentation</h2>
+						<p>Documentation can be found in the repository's <a href="https://github.com/iprodev/Scrollax.js/tree/master/docs"><code>docs</code> directory</a>.</p>
+					</header>
+					<ul class="actions">
+						<li><a href="https://github.com/iprodev/Scrollax.js/tree/master/docs/Markup.md" class="button small">HTML Markup</a></li>
+						<li><a href="https://github.com/iprodev/Scrollax.js/tree/master/docs/Calling.md" class="button small">Calling</a></li>
+						<li><a href="https://github.com/iprodev/Scrollax.js/tree/master/docs/Options.md" class="button small">Options</a></li>
+						<li><a href="https://github.com/iprodev/Scrollax.js/tree/master/docs/Properties.md" class="button small">Properties</a></li>
+						<li><a href="https://github.com/iprodev/Scrollax.js/tree/master/docs/Methods.md" class="button small">Methods</a></li>
+						<li><a href="https://github.com/iprodev/Scrollax.js/tree/master/docs/Events.md" class="button small">Events</a></li>
+					</ul>
+				</div>
+			</section>
 
-<p>Scrollax.js features:</p>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="http://github.com/iprodev" class="icon fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="http://twitter.com/chawroka" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="http://www.facebook.com/iprofessionaldev" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="http://plus.google.com/+iprodev?rel=publisher" rel="publisher" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				</ul>
+				<p class="copyright">&copy; <a href="http://iprodev.com">iProDev</a> by <a href="http://twitter.com/chawroka">Hemn Chawroka</a>. Released under the MIT license.<br>Template by <a href="http://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+	</body>
 
-<ul>
-<li>Highly optimized scrolling rendering</li>
-<li>GPU accelerated</li>
-<li>Set custom ratio for any CSS property</li>
-<li>Don't parallax elments that are not in the viewport</li>
-<li>Horizontal &amp; Vertical scrolling supports</li>
-<li>Lots of super useful methods</li>
-</ul>
-
-<p>... and has a powerful &amp; developer friendly API!</p>
-
-<p>That's all build around a custom highly optimized scrolling rendering, and GPU accelerated.</p>
-
-<h4>
-<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h4>
-
-<ul>
-<li>jQuery 1.7+</li>
-</ul>
-
-<h4>
-<a id="compatibility" class="anchor" href="#compatibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compatibility</h4>
-
-<p>Works everywhere, even in IE6+ abominations, but that is a complete accident :) IE 6-7 are not officially supported.</p>
-
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
-
-<p>Constructor:</p>
-
-<div class="highlight highlight-js"><pre><span class="pl-k">var</span> frame <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Scrollax</span>(<span class="pl-c1">window</span>).init();</pre></div>
-
-<p>jQuery proxy:</p>
-
-<div class="highlight highlight-js"><pre>$(<span class="pl-c1">window</span>).Scrollax();</pre></div>
-
-<p>or</p>
-
-<div class="highlight highlight-js"><pre>$.Scrollax();</pre></div>
-
-<p>jQuery proxy is good when you want to create an instance and forget about it. For anything more complex, like using methods, events, accessing instance properties, ... use the constructor and work with the instance directly.</p>
-
-<h2>
-<a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h2>
-
-<p>Latest stable release:</p>
-
-<ul>
-<li>
-<a href="https://raw.github.com/iprodev/Scrollax.js/master/scrollax.min.js">Production <code>scrollax.min.js</code></a> - 7KB, 3KB gzipped</li>
-<li>
-<a href="https://raw.github.com/iprodev/Scrollax.js/master/scrollax.js">Development <code>scrollax.js</code></a> - 22KB</li>
-</ul>
-
-<p>When isolating issues on jsfiddle, you can use this URL:</p>
-
-<ul>
-<li><a href="http://iprodev.github.io/Scrollax.js/lib/scrollax.min.js">http://iprodev.github.io/Scrollax.js/lib/scrollax.min.js</a></li>
-</ul>
-
-<h2>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
-
-<p>Can be found in the <a href="https://github.com/iprodev/Scrollax.js/tree/master/docs">docs</a> directory.</p>
-
-<h2>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
-
-<p>Please, read the <a href="CONTRIBUTING.md">Contributing Guidelines</a> for this project.</p>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<p>MIT</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/iprodev">iprodev</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.requestAnimationFrame.js"></script>
+	<script src="assets/js/jquery.easing-1.3.pack.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/rainbow.min.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<script src="lib/scrollax.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			// Calling Scrollax via jQuery proxy
+			$.Scrollax();
+		});
+	</script>
 </html>

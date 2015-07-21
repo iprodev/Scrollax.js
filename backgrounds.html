@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Scrollax: Horizontal Parallax</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,500|Open+Sans:400italic,700italic,400,700|Roboto+Slab' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style type="text/css">
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			body {
+				background: #f5f5f5;
+				color: #666;
+			}
+			section {
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 500px;
+				height: 100vh;
+				overflow: hidden;
+				color: #BBB;
+			}
+			section h2 {
+				color: #FFF;
+			}
+			section .cover {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+			}
+			section .cover img {
+				position: absolute;
+				display: block;
+				min-width: 100%;
+				min-height: 100%;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+						transform: translate(-50%, -50%);
+			}
+			section .content {
+				position: absolute;
+				display: block;
+				background: rgba(0, 0, 0, 0.7);
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+			}
+			section .text {
+				width: 50%;
+			}
+			.centralize {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+
+				-webkit-transform: translateZ(0px) translateX(-50%) translateY(-50%);
+				transform: translateX(-50%) translateY(-50%);
+			}
+
+			@media screen and (max-width: 1000px) {
+				section .text {
+					width: 90%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<section class="special" data-scrollax-parent="true">
+			<div class="cover" data-scrollax="properties: { translateY: '30%' }"><img src="images/photo-1429277005502-eed8e872fe52.jpg" /></div>
+			<div class="content">
+				<div class="text centralize">
+					<div data-scrollax="properties: { 'translateY': '150%', 'opacity': 1.5 }">
+						<header class="major">
+							<h2>Aliquam fringilla, lectus vitae malesuada.</h2>
+						</header>
+						<p>Sed nunc dui, laoreet et fringilla nec, aliquam sit amet dolor. Cras faucibus, justo vel ullamcorper accumsan, elit nibh tempus dui, eget tincidunt ante dolor eget nisi. Morbi at viverra eros. Nulla sed dui dui. Ut gravida euismod dolor vitae.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="special" data-scrollax-parent="true">
+			<div class="cover" data-scrollax="properties: { translateY: '30%' }"><img src="images/OnRKhvlFQ2uJNSx5O3cc_DSC00560.jpg" /></div>
+			<div class="content">
+				<div class="text centralize">
+					<div data-scrollax="properties: { 'translateY': '150%', 'opacity': 1.5 }">
+						<header class="major">
+							<h2>Lorem ipsum dolor sit amet.</h2>
+						</header>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent est turpis, aliquam quis molestie in, imperdiet a urna. Maecenas vel condimentum enim, eget tempor lectus. Vivamus ut nisi in enim vestibulum aliquam at quis nunc. Suspendisse ac erat eu.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="special" data-scrollax-parent="true">
+			<div class="cover" data-scrollax="properties: { translateY: '30%' }"><img src="images/photo-1429277158984-614d155e0017.jpg" /></div>
+			<div class="content">
+				<div class="text centralize">
+					<div data-scrollax="properties: { 'translateY': '150%', 'opacity': 1.5 }">
+						<header class="major">
+							<h2>Sed hendrerit lobortis dui. Donec.</h2>
+						</header>
+						<p>Duis efficitur ex non lectus congue, laoreet condimentum neque ullamcorper. Phasellus mauris turpis, convallis vel posuere sed, imperdiet commodo ligula. In eget consectetur velit. Sed eget arcu eget risus semper placerat. Aliquam aliquet erat augue, non scelerisque augue rhoncus vitae.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="special" data-scrollax-parent="true">
+			<div class="cover" data-scrollax="properties: { translateY: '30%' }"><img src="images/photo-1429277096327-11ee3b761c93.jpg" /></div>
+			<div class="content">
+				<div class="text centralize">
+					<div data-scrollax="properties: { 'translateY': '150%', 'opacity': 1.5 }">
+						<header class="major">
+							<h2>Vestibulum elementum purus quis justo.</h2>
+						</header>
+						<p>Quisque interdum convallis lacus ut auctor. Nunc venenatis elit non nulla gravida, congue fringilla justo ultrices. Morbi ut dolor fringilla, mollis ante imperdiet, euismod sem. Sed faucibus auctor ligula vel accumsan. Integer ultrices feugiat faucibus. Suspendisse hendrerit urna vulputate, accumsan.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/easeljs.min.js"></script>
+	<script src="lib/scrollax.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			'use strict';
+
+			$.Scrollax();
+		});
+	</script>
+</html>

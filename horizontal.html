@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Scrollax: Horizontal Parallax</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,500|Open+Sans:400italic,700italic,400,700|Roboto+Slab' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style type="text/css">
+			body {
+				background: #f5f5f5;
+				color: #666;
+				white-space: nowrap;
+			}
+			section {
+				position: relative;
+				display: inline-block;
+				width: 70vw;
+				padding: 5em 0;
+				vertical-align: top;
+			}
+			canvas {
+				display: none;
+			}
+			ul.particles {
+				position: relative;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				height: 300px
+			}
+			ul.particles li {
+				position: absolute;
+				width: 9px;
+				height: 9px;
+				padding: 0;
+				margin: 0;
+				background: #000;
+				border-radius: 50%;
+			}
+
+			@media screen and (max-width: 1000px) {
+				section {
+					width: 1000px;
+				}
+			}
+
+			/* Pages */
+			.pages {
+				position: fixed;
+				bottom: 30px;
+				left: 0;
+				right: 0;
+				list-style: none;
+				margin: 30px auto -25px auto;
+				padding: 0;
+				text-align: center;
+			}
+			.pages li {
+				display: inline-block;
+				width: 18px;
+				height: 18px;
+				margin: 0 4px;
+				padding: 0;
+			}
+			.pages a {
+				display: block;
+				width: 18px;
+				height: 18px;
+				text-indent: -999px;
+				cursor: pointer;
+				overflow: hidden;
+				background: #fd6a62;
+				border: solid 2px #fd6a62;
+
+				-webkit-border-radius: 50%;
+						border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body><section class="special" data-scrollax-parent="true" id="sectionOne">
+				<div class="content">
+					<ul class="particles" id="textOne"></ul>
+					<header class="major">
+						<h2>Parallax has never been easier.</h2>
+					</header>
+					<p>Add some simple data attributes to your markup, run <code>$.Scrollax();</code>.<br>
+					That's all you need to get started. Scroll to see Scrollax.js in action.</p>
+				</div>
+			</section><section class="special" data-scrollax-parent="true" id="sectionTwo">
+				<div class="content">
+					<ul class="particles" id="textTwo"></ul>
+					<header class="major">
+						<h2>Precisely change elements styles.</h2>
+					</header>
+					<p>All elements will return to their original position when they<br>
+					meet the edge of the screen—plus or minus your own optional offset,<br>
+					and only handle elements that are in the viewport.</p>
+				</div>
+			</section><section class="special" data-scrollax-parent="true" id="sectionThree">
+				<div class="content">
+					<ul class="particles" id="textThree"></ul>
+					<header class="major">
+						<h2>Try using Scrollax.js for yourself today.</h2>
+					</header>
+					<p>There's lots more to love. Plenty of configuration options, plus an<br>easy-to-use plugin architecture. <a href="https://github.com/iprodev/Scrollax.js/tree/master/docs">Read the documentation to get started.</a></p>
+				</div>
+			</section><section class="special" data-scrollax-parent="true" id="sectionThree">
+				<div class="content">
+				</div>
+			</section>
+
+			<ul class="pages"><li><a href="#sectionOne"></a></li><li><a href="#sectionTwo"></a></li><li><a href="#sectionThree"></a></li></ul>
+
+			<canvas id="text" width="0" height="0"></canvas>
+		</body>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.requestAnimationFrame.js"></script>
+	<script src="assets/js/jquery.easing-1.3.pack.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/rainbow.min.js"></script>
+	<script src="assets/js/easeljs.min.js"></script>
+	<script src="lib/scrollax.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			'use strict';
+
+			var $win = $(window);
+			var $html = $('html,body');
+			var stage, textStage;
+			var offsetX, offsetY, text, width, height;
+			var colors = ['#000', '#C00', '#0A0', '#37A9CC', '#4696e5'], color;
+			var $sections = $('section');
+
+			function handleEvents() {
+				//Debounce function from Underscore.js
+				var debounce = function(func, wait) {
+						var timeout;
+						return function() {
+							var context = this, args = arguments;
+							var later = function() {
+								timeout = null;
+								func.apply(context, args);
+							};
+							clearTimeout(timeout);
+							timeout = setTimeout(later, wait);
+						}
+					},
+					handleScroll = function() {
+						var scrollLeft = $win.scrollLeft(),
+							sectionIndex = Math.round(scrollLeft / $sections.first().outerWidth()),
+							$activeSection = $sections.eq(sectionIndex);
+
+						if ($activeSection.length === 0) {
+							$activeSection = $sections.last();
+						}
+
+						if ($activeSection.length === 0) return;
+
+						$win.unbind('scroll.scrlx');
+
+						if (scrollLeft === 0) {
+							$win.unbind('scroll.scrlx').bind('scroll.scrlx', debounce(handleScroll, 500));
+						} else {
+							$html.stop().animate({
+								scrollLeft: $activeSection.offset().left
+							}, 600, 'easeOutQuint', function() {
+								setTimeout(function(){
+									$win.unbind('scroll.scrlx').bind('scroll.scrlx', debounce(handleScroll, 500));
+								}, 10);
+							});
+						}
+
+						$win.bind('mousewheel', function(){
+							$html.stop(true, true);
+						});
+
+						$(document).bind('keydown', function(e){
+							var key = e.which;
+
+							if (key === 37 || key === 39) {
+								$html.stop(true, true);
+							}
+						});
+					};
+
+					$(window).bind('scroll.scrollax', debounce(handleScroll, 500));
+			}
+
+			//smooth scroll on page
+			$('[href^="#"]').bind('click', function(event) {
+				event.preventDefault();
+
+				var $this = $(this);
+				var hash = $this.attr('href').split('#')[1],
+					target = $('#' + hash);
+
+				$html.stop().animate({
+					scrollLeft: target.offset().left
+				}, 1700,'easeOutQuint');
+			});
+
+			// Init Canvas
+			function initStages() {
+				textStage = new createjs.Stage("text");
+				textStage.canvas.width = width = window.innerWidth < 1000 ? 1000 : Math.round(window.innerWidth/100 * 70);
+				textStage.canvas.height = height = 300;
+				offsetX = width/2;
+				offsetY = height/2;
+			}
+
+			function initText() {
+				text = new createjs.Text("t", "80px 'Source Sans Pro'", "#eee");
+				text.textAlign = 'center';
+				text.x = 300;
+			}
+
+			function createText(t) {
+				var fontSize = Math.round(offsetX/3.7);
+				if(fontSize < 120)
+					fontSize = 120;
+				text.text = t;
+				text.font = "900 " + fontSize + "px 'Source Sans Pro'";
+				text.textAlign = 'center';
+				text.textBaseline = 'middle';
+				text.x = offsetX;
+				text.y = offsetY;
+				text.parent = textStage;
+				textStage.removeAllChildren();
+				textStage.addChild(text);
+				textStage.update();
+
+				var ctx = document.getElementById('text').getContext('2d');
+				var pix = ctx.getImageData(0,0,width,height).data;
+				var textPixels = [];
+				for (var i = pix.length; i >= 0; i -= 1) {
+					if (pix[i] != 0) {
+						var x = (i / 4) % width;
+						var y = Math.floor(Math.floor(i/width)/4);
+						var size = Math.round(fontSize * 0.035);
+
+						if((x && x%(size+2) == 0) && (y && y%(size+2) == 0)) textPixels.push({x: x, y: y, size: size });
+					}
+				}
+
+				return textPixels;
+			}
+
+			function appendParticles(element, particles) {
+				var html = "", particle, random;
+				for (var i = 0, len = particles.length; i < len; i++) {
+					particle = particles[i];
+					random = Math.random() * 5000;
+					color = colors[Math.floor(i%colors.length)];
+					html += '<li data-scrollax="properties: { translateX: \'-' + random + 'px\' }" style="top: ' + particle.y + 'px; left: ' + particle.x + 'px; width: ' + particle.size + 'px; height: ' + particle.size + 'px; background-color: ' + color + ';"></li>';
+				}
+				element.innerHTML = html;
+			}
+
+			initText();
+			function init() {
+				initStages();
+				appendParticles(document.getElementById('textOne'), createText('EASY'));
+				appendParticles(document.getElementById('textTwo'), createText('SMART'));
+				appendParticles(document.getElementById('textThree'), createText('ENJOY'));
+				handleEvents();
+			}
+
+			init();
+
+			$.Scrollax({
+				horizontal: true
+			});
+
+			$(window).resize(function(){
+				init();
+			});
+		});
+	</script>
+</html>
