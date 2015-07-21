@@ -18,7 +18,7 @@
 	"bugs": "https://github.com/iprodev/Scrollax.js/issues",
 	"homepage": "http://iprodev.github.io/scrollax.js",
 	"docs": "https://github.com/iprodev/Scrollax.js/tree/master/docs",
-	"download": "https://raw.github.com/iprodev/Scrollax.js/master/dist/scrollax.min.js",
+	"download": "https://raw.github.com/iprodev/Scrollax.js/master/scrollax.min.js",
 	"dependencies": {
 		"jquery": ">=1.7"
 	},

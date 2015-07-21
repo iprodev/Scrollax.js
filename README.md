@@ -47,8 +47,8 @@ jQuery proxy is good when you want to create an instance and forget about it. Fo
 
 Latest stable release:
 
-- [Production `scrollax.min.js`](https://raw.github.com/iprodev/Scrollax.js/master/dist/scrollax.min.js) - 7KB, 3KB gzipped
-- [Development `scrollax.js`](https://raw.github.com/iprodev/Scrollax.js/master/dist/scrollax.js) - 22KB
+- [Production `scrollax.min.js`](https://raw.github.com/iprodev/Scrollax.js/master/scrollax.min.js) - 7KB, 3KB gzipped
+- [Development `scrollax.js`](https://raw.github.com/iprodev/Scrollax.js/master/scrollax.js) - 22KB
 
 When isolating issues on jsfiddle, you can use this URL:
 
