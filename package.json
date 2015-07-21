@@ -1,5 +1,5 @@
 {
-  "name": "Scrollax.js",
+  "name": "scrollax",
   "version": "1.0.0",
   "description": "Smart, Super smooth, cross-browser, and easy-to-use parallax scrolling effect plugin you have ever seen!",
   "main": "scrollax.min.js",
@@ -29,5 +29,11 @@
   "bugs": {
     "url": "https://github.com/iprodev/Scrollax.js/issues"
   },
-  "homepage": "https://iprodev.github.io/Scrollax.js"
+  "homepage": "https://iprodev.github.io/Scrollax.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
