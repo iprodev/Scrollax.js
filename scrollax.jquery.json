@@ -1,0 +1,31 @@
+{
+	"name": "Scrollax",
+	"title": "Scrollax.js",
+	"description": "Smart, Super smooth, cross-browser, and easy-to-use parallax scrolling effect plugin you have ever seen!",
+	"version": "1.0.0",
+	"keywords": [
+		"scrolling",
+		"parallax",
+		"scroll",
+		"effect",
+		"animation",
+		"easy"
+	],
+	"author": {
+		"name": "Hemn Chawroka",
+		"url": "http://iprodev.com"
+	},
+	"bugs": "https://github.com/iprodev/Scrollax.js/issues",
+	"homepage": "http://iprodev.github.io/scrollax.js",
+	"docs": "https://github.com/iprodev/Scrollax.js/tree/master/docs",
+	"download": "https://raw.github.com/iprodev/Scrollax.js/master/dist/scrollax.min.js",
+	"dependencies": {
+		"jquery": ">=1.7"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	]
+}

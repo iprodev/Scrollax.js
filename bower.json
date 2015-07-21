@@ -1,0 +1,22 @@
+{
+	"name": "Scrollax.js",
+	"version": "1.0.0",
+	"homepage": "https://iprodev.github.io/Scrollax.js",
+	"main": ["scrollax.min.js", "scrollax.js"],
+	"ignore": [
+		"docs",
+		".editorconfig",
+		".jshintrc",
+		"CONTRIBUTING.md",
+		"package.json",
+		"scrollax.jquery.json"
+	],
+	"keywords": [
+		"scrolling",
+		"parallax",
+		"scroll",
+		"effect",
+		"animation",
+		"easy"
+	]
+}
