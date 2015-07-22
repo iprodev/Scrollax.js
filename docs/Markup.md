@@ -1,6 +1,6 @@
 # Markup
 
-![Terminology](http://irodev.github.io/Scrollax.js/images/terminology.png)
+![Terminology](http://iprodev.github.io/Scrollax.js/images/terminology.png)
 
 **Terminology:** Scrollax is being applied to a **FRAME**. **PARENT** is parent edge for parallax elements. The parallax elements are then inside of a **PARENT**.
 
